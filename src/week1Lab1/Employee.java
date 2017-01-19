@@ -10,25 +10,19 @@ package week1Lab1;
  * @author Junghwan Yang
  */
 public class Employee {
-    String name;
-    int idNumber;
-    String department;
-    String position;
+    private String name;
+    private int idNumber;
+    private String department;
+    private String position;
     
     //constructor without args
     public Employee() {
-        this.name = "";
-        this.idNumber = 0; 
-        this.department = "";
-        this.position = "";
+        this("", 0, "", "");
     }
     
     //constructor with two args
      public Employee(String name, int idNumber) {
-        this.name = name;
-        this.idNumber = idNumber; 
-        this.department = "";
-        this.position = "";
+        this(name, idNumber, "", "");
     }
     
      //constructor with every args
@@ -76,16 +70,5 @@ public class Employee {
     //method showing every information as text
     public void printAllInformation() {
         System.out.printf("%-20s%-20d%-20s%s%n", this.getName(), this.getIdNumber(), this.getDepartment(), this.getPosition());
-    }
-    
-    public static void main(String[] args) {
-        Employee susan = new Employee("Susan Meyers", 47899, "Accounting", "Vice President");
-        Employee mark = new Employee("Mark Jones", 39119, "IT", "Programmer");
-        Employee joy = new Employee("Joy Rogers", 81774, "Manufacturing", "Engineer");
-        System.out.printf("%-20s%-20s%-20s%s%n", "Name", "ID Number", "Department", "Position");
-        System.out.println("-------------------------------------------------------------------------------");
-        susan.printAllInformation();
-        mark.printAllInformation();
-        joy.printAllInformation();
     }
 }
